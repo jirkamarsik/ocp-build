@@ -14,5 +14,5 @@ case ${OCAMLV} in
   *) LIBRUNTIME="";;
 esac
 
-echo ocamlc -o ocp-build.run -custom -make-runtime commonUnix_c.c primitives.ml unix.cma -cclib -lunix ${LIBRUNTIME}
-ocamlc -o ocp-build.run -custom -make-runtime commonUnix_c.c primitives.ml unix.cma -cclib -lunix ${LIBRUNTIME}
+echo ocamlc -o ocp-build.run -custom -make-runtime win32_c.c primitives.ml unix.cma  -cclib -lunix ${LIBRUNTIME}
+ocamlc -o ocp-build.run -custom -make-runtime win32_c.c primitives.ml unix.cma  -cclib -lunix ${LIBRUNTIME}

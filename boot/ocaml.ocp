@@ -15,20 +15,30 @@ begin
   version = "[distributed with Ocaml]"
   dirname = [ "%{OCAMLLIB}%" ]
 
+begin library "threads"
+  dirname = [ "%{OCAMLLIB}%"; "threads" ]
+   link = [ "-thread" ]
+  generated = true
+  requires = [ "unix" ]
+end
+
   begin library "unix"
     has_byte = true
     has_asm = true
+    files = [ "unix.ml" ]
   end
 
   begin library "str"
     requires = [ ]
     has_byte = true
     has_asm = true
+    files = [ "str.ml" ]
   end
 
   begin library "dynlink"
     has_byte = true
     has_asm = true
+    files = [ "dynlink.ml" ]
   end
 
   begin library "camlp4fulllib"
@@ -37,29 +47,37 @@ begin
     has_asm = false
   end
 
+(*
   begin library "bigarray"
     has_byte = true
     has_asm  = true
+    files = [ "bigarray.ml" ]
   end
+*)
 
   begin library "nums"
     has_byte = true
     has_asm  = true
+    files = [ "num.ml" ]
   end
 
   if ocaml_major_version = "4" then {
 
     dirname = [ "%{OCAMLLIB}%/compiler-libs" ]
 
+(*
     begin library "compiler-libs"
       meta = true
     end
+*)
     begin library "ocamlcommon"
     end
+(*
     begin library "compiler-libs.common"
       meta = true
       requires = [ "ocamlcommon" ]
     end
+*)
     begin library "ocamlbytecomp"
       requires = [ "ocamlcommon" ]
     end
@@ -98,4 +116,6 @@ begin
 
   }
 
+
 end
+

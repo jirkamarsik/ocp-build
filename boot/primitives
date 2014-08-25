@@ -1,4 +1,11 @@
-win32_waitpids_ml
-win32_getFileInformationByName_ml
-win32_waitpid_ml
-win_create_process
+onlyWin32_waitpids_ml
+onlyWin32_getFileInformationByName_ml
+onlyWin32_create_process_chdir
+minUnix_waitpid
+minUnix_inchannel_of_filedescr
+minUnix_outchannel_of_filedescr
+minUnix_filedescr_of_channel
+minUnix_lstat
+minUnix_filedescr_of_fd
+minUnix_startup
+minUnix_cleanup

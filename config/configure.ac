@@ -1,4 +1,4 @@
-AC_INIT(ocp-build,1.99.7-beta)
+AC_INIT(ocp-build,1.99.8-beta)
 CONFIGURE_ARGS=$*
 
 AC_COPYRIGHT(Copyright 2013 OcamlPro SAS)

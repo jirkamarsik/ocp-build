@@ -13,7 +13,7 @@
 begin
   version = "[distributed with Ocaml]"
   generated = true
-  dirname = [ "%{OCAMLLIB}%" "camlp4" ]
+  dirname = "%{OCAMLLIB}%/camlp4"
 
    begin library "camlp4lib"
      link = [ "-I" "+camlp4" ]

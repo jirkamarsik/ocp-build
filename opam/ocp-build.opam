@@ -6,7 +6,8 @@ build: [
   [ make "install" ]
 ]
 remove: [
-  [ "ocp-build" "-uninstall" "ocp-build" ]
+  [ "rm" "-f" "%{prefix}%/bin/ocp-build" ]
+  [ "rm" "-f" "%{prefix}%/bin/ocp-build.byte" ]
 ]
 depends: [ "ocamlfind" "camlp4" ]
 conflicts: [ "typerex"  {< "1.99.5"} ]

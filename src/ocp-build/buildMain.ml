@@ -60,7 +60,9 @@ let finally () =
 let sub_map = ref StringMap.empty
 
 let subcommands =  [
-    BuildActionRoot.subcommand;
+    BuildActionRoot.subcommand1;
+    BuildActionRoot.subcommand2;
+    BuildActionRoot.subcommand3;
     BuildActionConfigure.subcommand;
     BuildActionBuild.subcommand;
     BuildActionTests.subcommand;

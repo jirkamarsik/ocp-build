@@ -44,7 +44,7 @@ let action () =
   end else
     BuildMisc.safe_mkdir BuildOptions.project_build_dirname
 
-let subcommand = {
+let subcommand1 = {
   sub_name = "init";
   sub_help =  "Set the root of a project.";
   sub_arg_list = arg_list;
@@ -54,4 +54,29 @@ let subcommand = {
   ];
   sub_action = action;
 }
+
+let subcommand2 = {
+  sub_name = "-init";
+  sub_help =  "Set the root of a project.";
+  sub_arg_list = arg_list;
+  sub_arg_anon = None;
+  sub_arg_usage = [
+    "Set the root of a project.";
+  ];
+  sub_action = action;
+}
+
+let subcommand3 = {
+  sub_name = "-version";
+  sub_help =  "Print version.";
+  sub_arg_list = arg_list;
+  sub_arg_anon = None;
+  sub_arg_usage = [
+    "Print ocp-build version.";
+  ];
+  sub_action = (fun () ->
+    Printf.printf "%s\n%!" BuildVersion.version;
+    exit 0);
+}
+
 

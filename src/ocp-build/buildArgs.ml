@@ -183,7 +183,7 @@ let short_arg_list = [
 ]
 
 
-let arg_list = short_arg_list @ [
+let arg_list_old = short_arg_list @ [
 
   "-init", Arg.Unit (fun () ->
     init_arg := true;
@@ -370,7 +370,6 @@ let arg_list = short_arg_list @ [
     String.concat "\n" [
       "-------------------------------------------------------------------";
     ]]
-
 
 let best_indent = 30
 let second_indent = String.make 30 ' '
